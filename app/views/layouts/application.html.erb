@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  <!-- defalt -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- マテリアルcss導入 -->
+        <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- awesome font導入 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- material.cssのnav main color:indigo accent-1   -->
+    <% if  user_signed_in? == true %>
+      <ul id="dropdown1" class="dropdown-content">
+        <li class="divider"></li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><%= link_to 'Sign up', new_user_registration_path%></li>
+        <li class="divider"></li>
+        <li><%= link_to 'Sign in', new_user_session_path, method: :get %></li>
+      </ul>
+    <% end %>
+    <nav>
+      <div class="nav-wrapper indigo accent-1">
+        <%= link_to root_path, method: :get, class: "brand-logo center" do %>
+           <i class="fas fa-glasses"></i>Grass chat
+        <% end %>
+        <ul class="right hide-on-small-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="fas fa-angle-double-down"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

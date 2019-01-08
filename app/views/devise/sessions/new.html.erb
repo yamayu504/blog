@@ -1,0 +1,28 @@
+<div class="container__sign__style">
+  <div class="sign_header">
+    <span style="font-size: 2.3em; color: #9e9e9e;">sign in
+      <i class="fas fa-sign-in-alt"></i>
+    </span>
+  </div>
+ <div class="row">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "col s12") do |f| %>
+      <div class="row">
+        <div class="input-field col s12">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.label :email %><br />
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.password_field :password, id: "password", class: "validate" %>
+          <%= f.label :password, for: "password" %>
+        </div>
+      </div>
+     <div class="submit_style">
+        <%= button_tag type: "submit", class: "btn btn-default btn-s-md indigo accent-1" do %>
+          <i class="fas fa-paper-plane"></i>sign in
+        <% end %>
+      <% end %>
+     </div>
+  </div>
+

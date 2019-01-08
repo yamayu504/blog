@@ -1,0 +1,93 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// アロー
+nav ul{
+width:30vw;
+}
+
+
+// 投稿ボタン
+.btn-floating.btn-large.waves-effect.waves-light.red{
+  position:absolute;
+  right:8vw;
+  bottom:10vh;
+}
+
+
+// メインコンテンツ
+.container{
+  margin:0 auto;
+  width:70vw;
+  // overflowの都合上、ヘッダーの分だけ高さを低くする。
+  height:calc(100vh - 64px);
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top:50px;
+  clear:both;
+}
+// 投稿されたカード部分のCSS
+.row .col.s12.m6{
+  width:100%;
+  height:auto;
+}
+.card .card-content.black-text{
+  margin-top:20px;
+  min-height:100px;
+  padding:0 24px 14px 24px;
+  font-family: "Roboto", sans-serif;
+  font-size:20px;
+}
+span.post_time{
+   color:#9e9e9e;
+   font-family: "Roboto", sans-serif;
+   display: inline-block;
+   font-size:15px;
+   margin:12px 0 0 24px;
+}
+.post__edit{
+  margin:10px 0 0 0;
+}
+a.waves-effect.waves-light.btn{
+  padding:0 10px;
+}
+i.fas{
+  margin-right:10px;
+}
+
+// sign up
+.container__sign__style{
+  margin:0 auto;
+  width:70vw;
+  height:100vh;
+  clear:both;
+  max-width:700px;
+}
+em.worning_chara{
+   color:#9e9e9e;
+}
+.sign_header{
+  font-family: "Roboto", sans-serif;
+  margin:10px auto;
+  display: block;
+  text-align: left;
+  padding:20px 10px;
+}
+.btn.btn-default.btn-s-md{
+  padding:0 10px;
+}
+.submit_style{
+  text-align: left;
+  padding-left:10px;
+}
+
+// 新規投稿部分
+textarea#textarea1.materialize-textarea{
+  height:30px;
+  padding:0;
+  line-height: 30px;
+}
+
+

@@ -1,0 +1,24 @@
+<div class="card grey lighten-5">
+    <span class="post_time"><%= post.created_at %></span>
+  <div class="card-content black-text">
+        <p><%= post.post_text %></p>
+      <div class="post__edit">
+        <% if user_signed_in? && current_user.id == post.user_id%>
+          <%= link_to "/posts/#{post.id}", method: :get, class: "waves-effect waves-light btn indigo accent-1" do %>
+              <i class="fas fa-info"></i>detail
+          <% end %>
+         <%= link_to "/posts/#{post.id}", method: :delete, class: "waves-effect waves-light btn indigo accent-1" do %>
+              <i class="fas fa-trash-alt"></i>delete
+          <% end %>
+         <%= link_to "/posts/#{post.id}/edit", method: :get, class: "waves-effect waves-light btn indigo accent-1" do %>
+            <i class="fas fa-edit"></i>edit
+          <% end %>
+        <% else %>
+          <%= link_to "/posts/#{post.id}", method: :get, class: "waves-effect waves-light btn indigo accent-1" do %>
+            <i class="fas fa-info"></i>detail
+          <% end %>
+        <% end %>
+     </div>
+  </div>
+</div>
+

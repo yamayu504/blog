@@ -1,0 +1,23 @@
+<div class="container__sign__style">
+  <div class="sign_header">
+    <span style="font-size: 2.3em; color: #9e9e9e;">Post
+      <i class= "fas fa-paper-plane"></i>
+    </span>
+  </div>
+ <div class="row">
+     <%= form_for @post, :html => {:class => "col s12"} do |f|%>
+      <div class="row">
+        <div class="input-field col s12">
+        <%= f.text_area :post_text, id: "textarea1", class: "materialize-textarea" %>
+        <%= f.label :post_text, for: "textarea1" %>
+        </div>
+      </div>
+      <div class="submit_style">
+        <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md indigo accent-1" do %>
+          post
+        <% end %>
+      </div>
+      <% end %>
+  </div>
+</div>
+
